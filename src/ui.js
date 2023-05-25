@@ -44,6 +44,12 @@ function createNavbar() {
 
   return navbar;
 }
+function removeNavbar() {
+  const navbar = document.querySelector('nav');
+  navbar.innerHTML = '';
+  navbar.style.width = '0px';
+  navbar.style.padding = '0px';
+}
 function createFooter() {
   const footer = document.createElement('footer');
   footer.innerHTML = `Copyright &copy 2023 <a href="https://github.com/OmKaushik71">omkaushik</a>`;
@@ -51,10 +57,11 @@ function createFooter() {
 }
 function menuHandler() {
   const nav = document.querySelector('nav');
-  if (nav.style.display == 'none') {
-    nav.style.display = 'block';
-  } else {
-    nav.style.display = 'none';
+  if (nav.innerHTML !== '') removeNavbar();
+  else {
+    nav.innerHTML = createNavbar().innerHTML;
+    nav.style.width = '270px';
+    nav.style.padding = '2em 1em';
   }
 }
 function homeHandler() {}
