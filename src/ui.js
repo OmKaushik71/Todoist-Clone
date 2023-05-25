@@ -46,9 +46,13 @@ function createNavbar() {
 }
 function removeNavbar() {
   const navbar = document.querySelector('nav');
-  navbar.innerHTML = '';
   navbar.style.width = '0px';
   navbar.style.padding = '0px';
+}
+function createMain() {
+  const main = document.createElement('main');
+  main.appendChild(createNavbar());
+  return main;
 }
 function createFooter() {
   const footer = document.createElement('footer');
@@ -57,9 +61,8 @@ function createFooter() {
 }
 function menuHandler() {
   const nav = document.querySelector('nav');
-  if (nav.innerHTML !== '') removeNavbar();
+  if (nav.style.width !== '0px') removeNavbar();
   else {
-    nav.innerHTML = createNavbar().innerHTML;
     nav.style.width = '270px';
     nav.style.padding = '2em 1em';
   }
@@ -68,6 +71,6 @@ function homeHandler() {}
 
 export default function loadUi() {
   document.body.appendChild(createHeader());
-  document.body.appendChild(createNavbar());
+  document.body.appendChild(createMain());
   document.body.appendChild(createFooter());
 }
