@@ -125,3 +125,63 @@ main{
     display: flex;
     align-items: stretch;
 }
+
+.hidden{
+    width: 0;
+    padding: 0;
+}
+
+/* Styling Popup */
+.popup{
+  background-color: #1f1f1f;
+  color: #eeeeee;
+  font-family: inherit;
+  border-radius: 10px;
+  padding: 2em 1em;
+  font-size: 1.25rem;
+  max-width: 300px;
+  position: absolute;
+top : 50%;
+left : 50%;
+transform : translate(-50%,-50%);
+}
+.popup > h2{
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 2rem;
+}
+.popup input, .popup select,.popup button{
+  font-size: inherit;
+}
+.popup input, select{
+  border-radius: 10px;
+  background-color: inherit;
+  outline: none;
+  color:inherit;
+  border: #333333 2px solid;
+  padding: 0.25em 0.4em;
+  margin-top: 0.5em;
+  width: 100%;
+}
+.popup option{
+  background-color: #1f1f1f;
+  color: #eeeeee;
+}
+.popup > div {
+  margin-bottom: 1em;
+}
+.popup > button {
+  padding: 0.5em 1em;
+  margin-left: auto;
+  border-radius: inherit;
+  background-color:#de4c4a;
+  color:inherit;
+  outline: none;
+  border: none;
+  width: 100%;
+}
+.popup > button:hover{
+   background-color: #c53727;
+    cursor: pointer;
+  
+}

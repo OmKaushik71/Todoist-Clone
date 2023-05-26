@@ -24,7 +24,7 @@ function createHeader() {
   buttons.appendChild(homeBtn);
   buttons.appendChild(searchBar);
   const heading = document.createElement('h1');
-  heading.textContent = 'Todoist';
+  heading.textContent = 'Todo List';
 
   const date = document.createElement('div');
   date.classList.add('date');
@@ -40,14 +40,9 @@ function createNavbar() {
   const navbar = document.createElement('nav');
 
   navbar.innerHTML =
-    '<div class="main-project"><div class="inbox" id = "inbox"><img src ="./assets/inbox-icon.svg"> Inbox <span class="count">1</span></div><div class = "today" id="today"><img src="./assets/today-icon.svg"> Today <span class="count">2</span></div><div class="upcoming" id="upcoming"><img src ="./assets/upcoming-icon.svg"> Upcoming <span class= "count">3</span></div></div><div class="projects"><h2>Projects</h2><div class="add-projects" id="add-projects"><img src ="./assets/plus-icon.svg"> Add Projects</div></div>';
+    '<div class="main-project"><div class="inbox" id = "inbox"><img src ="./assets/inbox-icon.svg"> Inbox <span class="count"></span></div><div class = "today" id="today"><img src="./assets/today-icon.svg"> Today <span class="count"></span></div><div class="upcoming" id="upcoming"><img src ="./assets/upcoming-icon.svg"> Upcoming <span class= "count"></span></div></div><div class="projects"><h2>Projects</h2><div class="add-projects" id="add-projects"><img src ="./assets/plus-icon.svg"> Add Projects</div></div>';
 
   return navbar;
-}
-function removeNavbar() {
-  const navbar = document.querySelector('nav');
-  navbar.style.width = '0px';
-  navbar.style.padding = '0px';
 }
 function createMain() {
   const main = document.createElement('main');
@@ -59,13 +54,32 @@ function createFooter() {
   footer.innerHTML = `Copyright &copy 2023 <a href="https://github.com/OmKaushik71">omkaushik</a>`;
   return footer;
 }
+// Event Handlers
 function menuHandler() {
   const nav = document.querySelector('nav');
-  if (nav.style.width !== '0px') removeNavbar();
-  else {
-    nav.style.width = '270px';
-    nav.style.padding = '2em 1em';
-  }
+  nav.classList.toggle('hidden');
+}
+function addProjects() {
+  const popup = document.createElement('div');
+  popup.classList.add('popup');
+  popup.innerHTML = `<h2> Add project </h2>
+  <div> Name <input type ="text" name="name" >
+  </div>
+  <div> Color <select id="color">
+  <option value="charcoal"><div class="circle"></div> Charcoal </option>
+  <option value="berry red"><div class="circle"></div> Berry red </option>
+  <option value="red"><div class="circle"></div> Red </option>
+  <option value="blue"><div class="circle"></div> Blue </option>
+  <option value="orange"><div class="circle"></div> Orange </option>
+  <option value="yellow"><div class="circle"></div> Yellow </option>
+  <option value="green"><div class="circle"></div> Green </option>
+  <option value="lavender"><div class="circle"></div> Lavender </option>
+  <option value="magenta"><div class="circle"></div> Magenta </option>
+  </select>
+  </div>
+  <button> Submit </button>`;
+
+  document.body.appendChild(popup);
 }
 function homeHandler() {}
 
