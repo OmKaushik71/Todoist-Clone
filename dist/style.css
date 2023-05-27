@@ -139,11 +139,13 @@ main{
   border-radius: 10px;
   padding: 2em 1em;
   font-size: 1.25rem;
-  max-width: 300px;
+  max-width: 350px;
+  min-width: 300px;
   position: absolute;
 top : 50%;
 left : 50%;
 transform : translate(-50%,-50%);
+border: var(--hover-grey) 1px solid;
 }
 .popup > h2{
   text-align: center;
@@ -184,4 +186,10 @@ transform : translate(-50%,-50%);
    background-color: #c53727;
     cursor: pointer;
   
+}
+/* blur class */
+.blur{
+     filter: blur(2px);
+    pointer-events: none; /* user can't click again on that button*/
+    user-select: none;/* can't select anything or can't copy anything */
 }
